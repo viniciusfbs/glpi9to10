@@ -503,7 +503,7 @@ if migrate_to_glpi_10; then
     echo -e "${GREEN}✅ Usando banco: $C_MARIADB${NC}"
     echo "========================================"
 
-    log_success "🚀 Migração concluída com sucesso!"
+    log_success "🚀 Continue via tela a atualizaçaõ do GLPI 10..."
 else
     log_error "❌ Falha na migração"
     log_info "Para debug: docker exec -it $C_GLPI_10 bash"

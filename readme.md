@@ -37,9 +37,43 @@ chmod +x install_full.sh
 ./install_full.sh glpi_nome
 ```
 
+### 4. Finalizar Manualmente:
+Ao receber a seguinte mensagem: "Continue via tela a atualizaçaõ do GLPI 10..."
+Você precisará acessar o GLPI 10.0.18 via navegador para completar a migração.
+
+1. **Acesse o GLPI 10.0.18**:
+   ```
+   http://localhost:2611/
+   ```
+
+2. **Tela de Atualização**:
+   - Você verá uma tela informando que o GLPI precisa ser atualizado
+   - Clique no botão **"Atualizar"** (ou "Update")
+
+3. **Processo de Migração**:
+   - O sistema executará a migração automática do banco de dados
+   - **AGUARDE** - Este processo pode levar alguns minutos dependendo do tamanho da base
+   - **NÃO FECHE** a janela do navegador durante este processo
+
+4. **Finalização**:
+   - Quando a migração for concluída, aparecerá o botão **"Usar GLPI"** (ou "Use GLPI")
+   - Clique neste botão para acessar o sistema
+
+5. **Login**:
+   - **Usuário**: `glpi`
+   - **Senha**: `glpi`
+
+### ⚠️ Importante durante a finalização:
+
+- **Não interrompa** o processo de atualização via web
+- **Não recarregue** a página durante a migração
+- **Aguarde** até que o botão "Usar GLPI" apareça
+- Se houver erro, verifique os logs do container: `docker logs glpi10_nome_instancia`
+
+
 ## 🔧 Processo de Migração
 
-O script realiza automaticamente as seguintes etapas:
+O script realiza automaticamente SOMENTE as seguintes etapas:
 
 1. **Preparação do ambiente**:
    - Criação de diretórios necessários
